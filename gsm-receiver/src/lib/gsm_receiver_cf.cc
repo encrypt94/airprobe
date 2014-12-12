@@ -304,8 +304,8 @@ static const int MAX_OUT = 1; // maximum number of output streams
  */
 gsm_receiver_cf::gsm_receiver_cf(gr::feval_dd *tuner, gr::feval_dd *synchronizer, int osr, std::string key, std::string configuration)
   : gr::block("gsm_receiver",
-	      gr::make_io_signature(MIN_IN, MAX_IN, sizeof(gr_complex)),
-	      gr::make_io_signature(MIN_OUT, MAX_OUT, 142 * sizeof(float))),
+	      gr::io_signature::make(MIN_IN, MAX_IN, sizeof(gr_complex)),
+	      gr::io_signature::make(MIN_OUT, MAX_OUT, 142 * sizeof(float))),
     d_OSR(osr),
     d_chan_imp_length(CHAN_IMP_RESP_LENGTH),
     d_tuner(tuner),
