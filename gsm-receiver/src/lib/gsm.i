@@ -23,12 +23,12 @@
 %feature("autodoc", "1");		// generate python docstrings
 
 %include "exception.i"
-%import "gnuradio.i"			// the common stuff
+%import "/usr/include/gnuradio/swig/gnuradio.i"			// the common stuff
 
 /* %include "gsm_constants.h" */
 
 %{
-#include <gnuradio_swig_bug_workaround.h> // mandatory bug fix
+#include <gnuradio/swig/gnuradio_swig_bug_workaround.h> // mandatory bug fix
 #include <gnuradio/py_feval.h>
 #include "gsm_receiver_cf.h"
 #include <stdexcept>
