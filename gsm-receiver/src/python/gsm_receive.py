@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from gnuradio import gr, gru, filter
+from gnuradio import gr, blocks, filter
 #, gsm
 from gnuradio.eng_option import eng_option
 from optparse import OptionParser
@@ -69,7 +69,7 @@ class gsm_receiver_first_blood(gr.top_block):
         filter_t_width  = 10e3
         offset = 0
         #print "input_rate:", self.input_rate, "sample rate:", self.sps, " filter_cutoff:", filter_cutoff, " filter_t_width:", filter_t_width
-        filter_taps = filter.firdes.low_pass(1.0, self.input_rate, filter_cutoff, filter_t_width, gr.firdes.WIN_HAMMING)
+        filter_taps = filter.firdes.low_pass(1.0, self.input_rate, filter_cutoff, filter_t_width, filter.firdes.WIN_HAMMING)
         filtr = filter.freq_xlating_fir_filter_ccf(1, filter_taps, offset, self.input_rate)
         return filtr
 
