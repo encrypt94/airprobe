@@ -25,6 +25,7 @@
 #ifndef GSMCOMMON_H
 #define GSMCOMMON_H
 
+#include <unistd.h>
 #include <stdlib.h>
 #include <sys/time.h>
 #include <ostream>
